@@ -25,6 +25,17 @@ body {
     letter-spacing: 0;
     word-break: keep-all;
 }
+
+/* 공통 요소 */
+.inner{
+    position: relative;
+    display: block;
+    /* 반응형이니까 max 주고 이하일 때 100% */
+    max-width: 1420px;
+    width: 100%;
+    margin: 0 auto; 
+}
+
 /* 레이아웃 */
 .wrap {
     position: relative;
@@ -32,14 +43,71 @@ body {
 }
 /* 상단 */
 .header {
-    position: relative;
+    position: fixed;
+    left: 0;
+    top:0;
     display: block;
+    width: 100%;
+    height: 100px;
+    /* header는 z-index 최대값으로 사용 */
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0);
+    transition: height 0.5s, background 0.5s;
+}
+.header .inner{
+    max-width: 100%;
+    height: 100%;
+}
+/* left, top, right, bottom 사용 시 
+반드시 position: absolute 사용 */
+.logo{
+    position: absolute;
+    top: 35px;
+    left: 60px;
+    /* a, span 등은 display: inline 기본
+    margin, padding, width, height 못 줌 */
+    display: inline-block;
+    width: 125px;
+    height: 30px;
+    background: url('../images/logo_white.png') no-repeat center;
+    background-size: cover;
+    transition: top 0.5s, background 0.5s;
+}
+
+.nav{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.gnb{
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+/* 스크롤 시 css 적용 */
+.header.active{
+    height: 80px;
+    background-color: rgba(255, 255, 255, 1);
+}
+.header.active .logo{
+    top: 25px;
+    background: url('../images/logo.png') no-repeat center;
+    background-size: cover;
 }
 /* 비주얼 */
 .visual {
     position: relative;
     display: block;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/main_visual_1.jpg) no-repeat center;
+    background-size: cover;
 }
+
 /* 서비스 */
 .servcie {
     position: relative;
