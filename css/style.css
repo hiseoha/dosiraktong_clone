@@ -26,7 +26,7 @@ body {
     word-break: keep-all;
 }
 
-/* 공통 요소 */
+/* 공통 요소 (2번 이상 활용하는 경우)*/
 .inner{
     position: relative;
     display: block;
@@ -35,7 +35,6 @@ body {
     width: 100%;
     margin: 0 auto; 
 }
-
 /* 레이아웃 */
 .wrap {
     position: relative;
